@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel = "Stylesheet" href = "style.css">
+</head>
+<body>
+    <header>
+        <img src="/img/Logo.png" alt="Logo">
+    </header>
+    <main>
+        <div class="presentacion">
+            <div class="presentacion_usuario">
+                <h2 class="presentacion_titulo">Mensaje a encriptar</h2>
+                <textarea name="textoIngresado" id="textoUsuario" placeholder="Ingrese el texto aqui"></textarea>
+                <p class="presentacion_parrafo_alerta"><img src="/img/Alerta.png" height="12px" width="12px"> Solo letras minúsculas y sin acentos.</p>  
+            </div>
+            <div class="presentacion_botones">
+                <button id="encriptado" onclick="botonEncriptar()">Encriptar</button>
+                <button id="desencriptado" onclick="botonDesencriptar()">Desencriptar</button>
+            </div>
+        </div>
+        <aside class="respuesta">
+            <div class="respuesta_imagen_alerta">
+                <img src="/img/Muñeco.png" alt="Muñeco">
+            </div> 
+            <div class="respuesta_alerta">
+                <h2 class="respuesta_alerta_titulo">Nigún mensaje fue encontrado</h2>
+                <p class="respuesta_alerta_parrafo">Ingresar el texto que desees encriptar o desencriptar.</p>
+            </div>
+        </aside>
+    </main>
+    <footer> </footer>
+</body>
+<script src="app.js"></script>
+</html>
