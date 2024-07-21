@@ -1,4 +1,6 @@
-let parrafo =document.querySelector("#textoUsuario")
+let parrafo_usuario =document.querySelector("#textoUsuario");
+let parrafo_encriptado =document.querySelector("#parrafo_encriptado");
+
 
 function encriptador (texto,accion) {  
     if (accion == "encriptar") {
@@ -25,15 +27,48 @@ function encriptador (texto,accion) {
         texto = texto.replaceAll("ufat","u")
     }
     return texto
-}
+};
 
-function botonEncriptar () {
-    parrafoUsuario = parrafo.value
-    parrafo.innerHTML = encriptador(parrafoUsuario,"encriptar")
-}
 
-function botonDesencriptar () {
-    parrafoUsuario = parrafo.value
-    parrafo.innerHTML = encriptador(parrafoUsuario,"desencriptar")
-}
+function copiarTexto() {
+
+  var copyText = document.getElementById("parrafo_encriptado");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+  navigator.clipboard.writeText(copyText.value);
+  
+};
+
+
+
+$(document).ready(function(){
+    $( "#textoUsuario" ).on( "change", function() {
+        if ($("#textoUsuario").val()==""){
+            $(".respuesta_imagen_alerta").css('display', 'flex');
+            $(".respuesta_alerta").css('display', 'flex');
+            $(".respuesta_encriptado").hide();
+        } else {
+            $("#encriptado").click(function(){
+                if ($("#textoUsuario").val()!="") {
+                    $(".respuesta_imagen_alerta").hide();
+                    $(".respuesta_alerta").hide();
+                    $(".respuesta_encriptado").css('display', 'flex');
+                    parrafo_encriptado.innerHTML = encriptador(parrafo_usuario.value,"encriptar")
+                }
+            });
+            $("#desencriptado").click(function(){
+                if ($("#textoUsuario").val()!="") {
+                    $(".respuesta_imagen_alerta").hide();
+                    $(".respuesta_alerta").hide();
+                    $(".respuesta_encriptado").css('display', 'flex');
+                    parrafo_encriptado.innerHTML = encriptador(parrafo_usuario.value,"desencriptar")
+                }
+            });  
+        }
+    });
+});
+
+
+
 

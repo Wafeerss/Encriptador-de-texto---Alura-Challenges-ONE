@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
     <link rel = "Stylesheet" href = "style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -18,11 +19,15 @@
                 <p class="presentacion_parrafo_alerta"><img src="/img/Alerta.png" height="12px" width="12px"> Solo letras minúsculas y sin acentos.</p>  
             </div>
             <div class="presentacion_botones">
-                <button id="encriptado" onclick="botonEncriptar()">Encriptar</button>
-                <button id="desencriptado" onclick="botonDesencriptar()">Desencriptar</button>
+                <button id="encriptado">Encriptar</button>
+                <button id="desencriptado">Desencriptar</button>
             </div>
         </div>
         <aside class="respuesta">
+            <div class="respuesta_encriptado">
+                <p id="parrafo_encriptado"></p>
+                <button id="copiar" onclick=copiarTexto()>Copiar</button>
+            </div>
             <div class="respuesta_imagen_alerta">
                 <img src="/img/Muñeco.png" alt="Muñeco">
             </div> 
