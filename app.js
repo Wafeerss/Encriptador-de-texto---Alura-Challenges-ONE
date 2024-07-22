@@ -45,7 +45,10 @@ function copiarTexto() {
 $(document).ready(function(){
     $( "#textoUsuario" ).on( "change", function() {
         if ($("#textoUsuario").val()==""){
-            $(".respuesta_imagen_alerta").css('display', 'flex');
+            if ($(window).width() >1240) {
+                $(".respuesta_imagen_alerta").css('display', 'flex');
+            };
+            /*$(".respuesta_imagen_alerta").css('display', 'flex');*/
             $(".respuesta_alerta").css('display', 'flex');
             $(".respuesta_encriptado").hide();
         } else {
