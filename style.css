@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+:root{
 
+    /* Colores usuario  */
+    --color--primario--2: #729762 ;
+    --color--primario--3: #658147;
+    --color--primario--4: #597445;
+    --color--primario--5: #E7F0DC;
+
+    --color--secundario--1: #ACE1AF;
+    --color--secundario--2: #B0EBB4;
+    --color--secundario--3: #BFF6C3;
+    --color--secundario--4: #E0FBE2;
+
+    --color--componentes--1: #343A40;
+    --color--componentes--2: #495057;
+    --color--componentes--3: #868e96;
+    --color--componentes--4: #CED4D4;
+
+}
 
 *{
     padding: 0;
@@ -8,18 +26,21 @@
     font-family: "Inter", sans-serif;
 }
 
+
 header{
     margin: 10px;
 }
 
 body{
-    height: 100%;
-    height: 100%;
-    background-color: #F3F5FC;
+    height: 1024px;
+    width: 1440px;
+    background-color: var(--color--secundario--4);
     box-sizing: border-box;
 }
 
 main{
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 80px;
@@ -28,11 +49,12 @@ main{
 .presentacion{
     display: flex;
     flex-direction: column;
-    height: 944px;
-    width: 680px;
+    /*height: 944px;
+    width: 680px;*/
     align-items: flex-start;
     gap: 16px;
-
+    box-sizing: border-box;
+    padding-bottom: 32px;
     
 }
 
@@ -40,99 +62,107 @@ main{
     display: flex;
     flex-direction: column;
     gap: 16px;
+    height: 100%;
+    width: 100%;
 
 
 }
 
 .presentacion_titulo{
     font-size: 32px;
-    color: #072B61;
+    color: var(--color--primario--2);
 }
 
 .presentacion_parrafo_alerta{
     font-size: 12px;
-    color: #495057;
+    color: var(--color--componentes--2);
 }
 
 
 
 textarea{
+    display: flex;
     border-style: none;
     background-color: transparent;
     font-size: 32px;
-    color: #0A3871;
+    color: var(--color--primario--3);
     outline: none;
-    width: 680px;
-    height: 765px;
+    width: 100%;
+    height: 100%;
     font-size: 32px;
     resize: none;
 }
 
 #textoUsuario::placeholder{
-    color: #0a3871cd;
+    color: var(--color--primario--4);
 }
 
 
 .presentacion_botones{
     display: flex;
-    width: 680px;
-    height: 67px;
+    /*width: 680px;
+    height: 67px;*/
     justify-content: space-between;
+    gap: 24px;
 
 }
 
 #encriptado{
     border-radius: 24px;
     border-style: solid;
-    border-color: #0A3871;
+    border-color: var(--color--primario--3);
     width: 328px;
     height: 67px;
-    background-color: #0A3871;
+    background-color: var(--color--primario--3);
     font-size: 16px;
     color: white;
     transition: background-color 0.05s ease
 }
 
 #encriptado:hover{
-    background-color:#1e4473 ;
+    background-color: var(--color--primario--5);
 }
 
 #encriptado:active{
-    background-color:#5d7b9f ;
+    background-color: var(--color--primario--4) ;
 }
 
 
 #desencriptado{
     border-radius: 24px;
     border-style: solid;
-    border-color: #0A3871;
+    border-color: var(--color--primario--3);
     width: 328px;
     height: 67px;
-    background-color: #F3F5FC;
+    background-color: var(--color--secundario--4);
     font-size: 16px;
-    color: #0A3871;
+    color: var(--color--primario--3);
     transition: background-color 0.05s ease
+
 }
 
 #desencriptado:hover{
-    background-color:#d1dae6 ;
+    background-color: var(--color--secundario--2) ;
 }
 
 #desencriptado:active{
-    background-color:#a9bad1 ;
+    background-color: var(--color--secundario--1) ;
 }
 
 .respuesta{
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    height: 934px;
     width: 400px;
+    gap: 32px;
+    /*height: 934px;
+    width: 400px;*/
     align-items: center;
     justify-content: center;
     border-radius: 32px;
     background-color: white;
     padding: 32px;
+    box-sizing: border-box;
+    box-shadow: 5px 5px 20px 3px var(--color--componentes--4);
 
     
 }
@@ -144,16 +174,19 @@ textarea{
     width: 100%;
     justify-content: center;
     align-items: center;
+    
 }
 
 #parrafo_encriptado{
     display: flex;
     word-break: break-all;
     font-size: 24px;
-    color: #495057;
-    width: 336px;
+    color: var(--color--componentes--2);
+    width: 100%;
     height: 100%;
-    
+    overflow: scroll;
+    padding-bottom: 32px;
+
 
 }
 
@@ -163,22 +196,21 @@ textarea{
     justify-content: center;
     border-radius: 24px;
     border-style: solid;
-    border-color: #0A3871;
+    border-color: var(--color--primario--3);
     width: 336px;
     height: 69px;
     background-color:  white;
     font-size: 16px;
-    color: #0A3871;
-    margin-bottom: 36px;
-    transition: background-color 0.05s ease
+    color: var(--color--primario--3);
+    transition: background-color 0.05s ease;
 }
 
 #copiar:hover{
-    background-color:#f3f8fd ;
+    background-color: var(--color--secundario--3) ;
 }
 
 #copiar:active{
-    background-color:#a9bad1 ;
+    background-color: var(--color--secundario--2) ;
 }
 
 
@@ -198,13 +230,13 @@ textarea{
 .respuesta_alerta_titulo{
     font-size: 24px;
     text-align: center;
-    color: #343A40;
+    color: var(--color--componentes--1);
 }
 
 .respuesta_alerta_parrafo{
     font-size: 16px;
     text-align: center;
-    color: #495057;
+    color: var(--color--componentes--2);
 }
 
 footer{
@@ -213,73 +245,119 @@ footer{
 }
 
 
-
-/*@media (max-width: 374px){
+@media (  max-width:786px ){
+    body{
+        height: 1174px;
+        width: 768px;
+        background-color: var(--color--secundario--4);
+        box-sizing: border-box;
+        padding: 32px;
+    }
     main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 64px;
         
     }
 
     .presentacion{
-        width: 327px;
-        flex-direction: column;
+        width: 100%;
+        height: 55%;
         justify-content: center;
         align-items: center;
-    };
-
-    .presentacion_botones{
-        height: 158px;
-        flex-direction: column;
-        align-items: center;
-    };
-
-
-    .respuesta {
-        width: 327px;
-        flex-direction: column;
-    };
-
-    .respuesta_imagen_alerta{
-        display: none;
-        justify-content: center;
-        align-items: center;
-    };
-};*/
-
-@media (max-width: 1240px ) and (min-width: 400px){
-    main {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
     }
-
-    .presentacion{
-        width: 80%;
-        justify-content: center;
-        align-items: center;
-    };
 
     .presentacion_usuario{
         width: 80%;
-    };
+    }
 
     .presentacion_botones{
         width: 80%;
         gap: 32px
-    };
+    }
 
 
     .respuesta {
         width: 80%;
-    };
+        box-sizing: content-box;
+    }
+
 
     .respuesta_imagen_alerta{
         display: none;
         justify-content: center;
         align-items: center;
-    };
-};
+    }
+}
+
+
+footer{
+    display: flex;
+    background-color: var(--color--secundario--1);
+    color: var(--color--primario--2);
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+}
+
+@media (  max-width:376px ){
+    body{
+        height: 933px;
+        width: 375px;
+        background-color: var(--color--secundario--4);
+        box-sizing: border-box;
+        padding: 5px;
+    }
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 64px;
+
+        
+    }
+
+    .presentacion{
+        height: 55%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+        box-sizing: content-box;
+    }
+
+    .presentacion_titulo{
+        display: none;
+    }
+
+    .presentacion_usuario{
+        width: 80%;
+    }
+
+    .presentacion_botones{
+        width: 80%;
+        gap: 32px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #copiar{
+        width: 75%;
+    }
+
+    .respuesta {
+        width: 85%;
+        flex-direction: column;
+        box-sizing: content-box;
+        padding: 15px;
+    }
+
+
+    .respuesta_imagen_alerta{
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+}
 

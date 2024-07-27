@@ -30,7 +30,7 @@ function encriptador (texto,accion) {
 };
 
 
-function copiarTexto() {
+/*function copiarTexto() {
 
   var copyText = document.getElementById("parrafo_encriptado");
   copyText.select();
@@ -38,7 +38,7 @@ function copiarTexto() {
 
   navigator.clipboard.writeText(copyText.value);
   
-};
+};*/
 
 
 
@@ -66,6 +66,7 @@ $(document).ready(function(){
                     $(".respuesta_alerta").hide();
                     $(".respuesta_encriptado").css('display', 'flex');
                     parrafo_encriptado.innerHTML = encriptador(parrafo_usuario.value,"desencriptar")
+                    console.log(parrafo_encriptado.innerHTML)
                 }
             });  
         }
@@ -73,5 +74,9 @@ $(document).ready(function(){
 });
 
 
+let copyButton = document.querySelector('#copiar');
+copyButton.addEventListener('click', () => {
+	navigator.clipboard.writeText(parrafo_encriptado.innerHTML)
+})
 
 
